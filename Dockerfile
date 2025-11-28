@@ -13,12 +13,16 @@ COPY src ./src
 
 RUN ./mvnw clean package -DskipTests
 
+# List what was built (for debugging)
+RUN ls -la /app/target/
+
 # Runtime stage
 FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
-COPY --from=builder /app/target/*.jar app.jar
+# Copy WAR file (not JAR) and rename to app.jar
+COPY --from=builder /app/target/*.war app.jar
 
 EXPOSE 8082
 
