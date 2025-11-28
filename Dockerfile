@@ -27,6 +27,9 @@ WORKDIR /app
 # Copy JAR from builder stage
 COPY --from=builder /app/target/*.jar app.jar
 
+# Verify the JAR file exists
+RUN ls -la /app/
+
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
