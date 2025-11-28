@@ -1,8 +1,28 @@
+FROM eclipse-temurin:17-jdk-jammy AS builder
+
+WORKDIR /app
+
+# Copy Maven wrapper and pom.xml
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+
+# Download dependencies (cached layer)
+RUN ./mvnw dependency:go-offline
+
+# Copy source code
+COPY src ./src
+
+# Build the application
+RUN ./mvnw clean package -DskipTests
+
+# Runtime stage
 FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+# Copy JAR from builder stage
+COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
