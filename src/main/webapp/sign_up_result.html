@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Details - GokulKrishna Youth</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff3e0, #ffecb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 480px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(255, 152, 0, 0.25);
+            text-align: center;
+            border-top: 5px solid #ff9800;
+        }
+
+        .om-circle {
+            width: 70px;
+            height: 70px;
+            background: #ff9800;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+        }
+
+        h2 {
+            margin: 0;
+            color: #6a1b9a;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #8d6e63;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .field-box {
+            background: #fff8e1;
+            padding: 12px;
+            border-left: 4px solid #ff9800;
+            margin: 12px 0;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #6a1b9a;
+            font-size: 14px;
+        }
+
+        .value {
+            font-size: 16px;
+            padding-top: 2px;
+            color: #333;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #ff9800;
+            color: white;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 20px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+        }
+
+        .btn:hover {
+            background: #f57c00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="om-circle">ॐ</div>
+
+        <h2>Member Details</h2>
+        <p class="subtitle">Blessings of Lord Krishna be with you</p>
+
+        <div class="field-box">
+            <div class="label">Member ID</div>
+            <div class="value" th:text="${user.id}">123</div>
+        </div>
+
+        <div class="field-box">
+            <div class="label">Username</div>
+            <div class="value" th:text="${user.username}">john_doe</div>
+        </div>
+
+        <div class="field-box">
+            <div class="label">Password</div>
+            <div class="value" th:text="${user.password}">******</div>
+        </div>
+
+        <a href="/" class="btn">Back to Home</a>
+
+    </div>
+
+</body>
+</html>

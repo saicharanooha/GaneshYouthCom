@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiritual Community</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      padding-top: 0;
+    }
+
+    .hero-wrapper {
+      margin-top: 0;
+      padding-top: 20px;
+    }
+
+    .edge-links {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 100;
+    }
+
+    .edge-links.left {
+      left: 10px;
+      top: 60%;
+      transform: translateY(-50%);
+    }
+
+    .edge-links.right {
+      right: 10px;
+      top: 60%;
+      transform: translateY(-50%);
+    }
+
+    .edge-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: #5d4037;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .edge-links a:hover {
+      background: linear-gradient(135deg, #ff6f00, #ff8f00);
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255,111,0,0.3);
+    }
+
+    .edge-links a span:first-child {
+      font-size: 18px;
+    }
+
+    .hero-wrapper {
+      position: relative;
+    }
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .top-left {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6a1b9a;
+    }
+
+    .top-right {
+      font-size: 12px;
+      color: #5d4037;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .top-right span {
+      color: #d84315;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 36px 12px;
+      background: #fff8f0;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    .icon-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 18px;
+    }
+
+    .rotating-border {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #ff6f00;
+      border-right-color: #ff8f00;
+      animation: rotate 3s linear infinite;
+    }
+
+    .rotating-border span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+    }
+
+    .vinayaka-image {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #ff6f00, #ff8f00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+
+    .hero-title {
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 700;
+      color: #d84315;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #5d4037;
+      margin-bottom: 22px;
+    }
+
+    .spiritual-quote {
+      margin-top: 24px;
+      padding: 20px;
+      background: rgba(255, 143, 0, 0.1);
+      border-left: 4px solid #ff6f00;
+      border-radius: 8px;
+      font-style: italic;
+      color: #5d4037;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media(max-width: 1024px) {
+      .edge-links {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px;
+      }
+
+      .edge-links a {
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .top-left, .top-right {
+        font-size: 11px;
+      }
+      
+      .icon-circle {
+        gap: 16px;
+      }
+      
+      .rotating-border {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .rotating-border span {
+        font-size: 16px;
+      }
+      
+      .vinayaka-image {
+        width: 80px;
+        height: 80px;
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Edge Links -->
+  <div class="edge-links left">
+    <a href="#bhagavad-gita">
+      <span>📖</span>
+      <span>Money Gift</span>
+    </a>
+    <a href="#vedas">
+      <span>📜</span>
+      <span>Food Gift</span>
+    </a>
+    <a href="#upanishads">
+      <span>✨</span>
+      <span>Schedule Pooja</span>
+    </a>
+    <a href="#ramayana">
+      <span>🏹</span>
+      <span>Future Plans</span>
+    </a>
+    <a href="#mahabharata">
+      <span>⚔️</span>
+      <span>check today schedule</span>
+    </a>
+    <a href="#puranas">
+      <span></span>
+      <span>Send Notifications</span>
+    </a>
+    <a href="#aarti">
+      <span>🪔</span>
+      <span>Show Details </span>
+    </a>
+    <a href="#bhajans">
+      <span>🎶</span>
+      <span>Community Member Details</span>
+    </a>
+  </div>
+
+  <!-- Right Edge Links -->
+  <div class="edge-links right">
+    <a href="#meditation">
+      <span>🧘</span>
+      <span>Update Account Details</span>
+    </a>
+    <a href="#prayer">
+      <span>🙏</span>
+      <span>Forgot Password</span>
+    </a>
+    <a href="#yoga">
+      <span>🕉️</span>
+      <span>Send Notifications</span>
+    </a>
+    <a href="#mantras">
+      <span>🎵</span>
+      <span>Mantras</span>
+    </a>
+    <a href="#puja">
+      <span>🌺</span>
+      <span>Puja Vidhi</span>
+    </a>
+    <a href="#temples">
+      <span>🛕</span>
+      <span>Temples</span>
+    </a>
+    <a href="#astrology">
+      <span>⭐</span>
+      <span>Astrology</span>
+    </a>
+    <a href="#satsang">
+      <span>👥</span>
+      <span>Satsang</span>
+    </a>
+  </div>
+
+  <div class="container">
+    
+    <!-- Main Content -->
+    <main class="hero-wrapper">
+      <div class="top-header">
+        <div class="top-left">Youth Association</div>
+        <div class="top-right">
+          Designed & Developed by <span>Nallagorla Saicharan</span>, USA
+        </div>
+      </div>
+
+      <div class="hero-section">
+        <div class="icon-circle">
+          <!-- Left Candle -->
+          <div class="rotating-border">
+            <span>🪔</span>
+          </div>
+
+          <!-- Lord Vinayaka -->
+          <div class="vinayaka-image">
+            🕉️
+          </div>
+
+          <!-- Right Candle -->
+          <div class="rotating-border">
+            <span>🪔</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">జై బోలో గణేష్ మహారాజ్ కీ జై</h1>
+        <p class="subtitle">Welcome to our spiritual community</p>
+
+        <div class="spiritual-quote">
+          "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः"<br>
+          May all be happy, may all be free from disease
+        </div>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
