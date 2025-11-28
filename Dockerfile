@@ -1,14 +1,19 @@
-# Use a base image
-FROM openjdk:17-jdk-slim
+# Use official OpenJDK 17 slim image
 
-# Set working directory
+FROM openjdk:17-jdk-slim-bullseye
+
+# Set working directory inside container
+
 WORKDIR /app
 
-# Copy project JAR into the container
+# Copy the Spring Boot JAR file into the container
+
 COPY target/*.jar app.jar
 
-# Expose the port your app runs on
+# Expose the port your Spring Boot app runs on
+
 EXPOSE 8080
 
-# Command to run the application
+# Run the Spring Boot application
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
