@@ -1,19 +1,14 @@
-# Use official OpenJDK 17 slim image
-
-FROM openjdk:17-jdk-slim-bullseye
-
-# Set working directory inside container
+ Option 1: Use JRE instead of JDK (smaller, runtime only)
+FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
-
-# Copy the Spring Boot JAR file into the container
-
 COPY target/*.jar app.jar
-
-# Expose the port your Spring Boot app runs on
-
 EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
+# Option 2: Use Alpine for minimal size
+FROM eclipse-temurin:17-jre-alpine
 
-# Run the Spring Boot application
-
+WORKDIR /app
+COPY target/*.jar app.jar
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
