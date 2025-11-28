@@ -125,12 +125,7 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.Lord_vinayaka</groupId>
-			<artifactId>web_mvc_module</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+		</dependencies>
 
 	<build>
 		<plugins>
